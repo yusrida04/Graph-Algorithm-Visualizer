@@ -1,0 +1,196 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    color: white;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+header p {
+    font-size: 1.2em;
+    opacity: 0.9;
+}
+
+.main-content {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 20px;
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* Sidebar Styles */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.control-group {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 4px solid #667eea;
+}
+
+.control-group h3 {
+    margin-bottom: 15px;
+    color: #495057;
+    font-size: 1.1em;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 8px;
+    background: #667eea;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: #5a6fd8;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+button:disabled {
+    background: #adb5bd;
+    cursor: not-allowed;
+    transform: none;
+}
+
+select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+input[type="range"] {
+    width: 100%;
+    margin: 10px 0;
+}
+
+.current-algo {
+    margin-top: 15px;
+    padding: 10px;
+    background: #e7f3ff;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Graph Area Styles */
+.graph-area {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+#graphCanvas {
+    border: 2px solid #e9ecef;
+    border-radius: 10px;
+    background: #f8f9fa;
+    cursor: crosshair;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.info-panel {
+    margin-top: 20px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    border-left: 4px solid #28a745;
+}
+
+.info-panel h4 {
+    margin-bottom: 10px;
+    color: #495057;
+}
+
+.info-panel div {
+    margin: 5px 0;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    padding: 5px;
+    background: white;
+    border-radius: 3px;
+}
+
+/* Node States */
+.node {
+    transition: all 0.3s ease;
+}
+
+.node.visited {
+    fill: #ff6b6b !important;
+}
+
+.node.current {
+    fill: #4ecdc4 !important;
+    r: 25 !important;
+}
+
+.node.path {
+    fill: #45b7d1 !important;
+}
+
+.edge.path {
+    stroke: #45b7d1 !important;
+    stroke-width: 3 !important;
+}
+
+/* Mode Active State */
+.mode-active {
+    background: #4ecdc4 !important;
+    box-shadow: 0 0 0 3px rgba(78, 205, 196, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .main-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .sidebar {
+        order: 2;
+    }
+    
+    .graph-area {
+        order: 1;
+    }
+}

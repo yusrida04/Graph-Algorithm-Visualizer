@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graph Algorithm Visualizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎯 Graph Algorithm Visualizer</h1>
+            <p>Visualisasi Algoritma Struktur Data Graph</p>
+        </header>
+
+        <div class="main-content">
+            <!-- Sidebar Controls -->
+            <div class="sidebar">
+                <div class="control-group">
+                    <h3>🗺️ Graph Controls</h3>
+                    <button id="addNodeBtn">Tambah Node</button>
+                    <button id="addEdgeBtn">Tambah Edge</button>
+                    <button id="dragNodeBtn">Drag Node</button>
+                    <button id="clearBtn">Clear Graph</button>
+                    <button id="randomGraphBtn">Random Graph</button>
+                </div>
+
+                <div class="control-group">
+                    <h3>⚡ Algorithms</h3>
+                    <select id="algorithmSelect">
+                        <option value="bfs">BFS (Breadth First Search)</option>
+                        <option value="dfs">DFS (Depth First Search)</option>
+                        <option value="dijkstra">Dijkstra (Shortest Path)</option>
+                    </select>
+                    <button id="startBtn">Start Visualization</button>
+                    <button id="resetBtn">Reset Visualization</button>
+                </div>
+
+                <div class="control-group">
+                    <h3>🎛️ Settings</h3>
+                    <label>Speed: 
+                        <input type="range" id="speedSlider" min="100" max="2000" value="500">
+                    </label>
+                    <div class="current-algo">
+                        <strong>Status:</strong> 
+                        <span id="statusText">Ready</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Graph Canvas -->
+            <div class="graph-area">
+                <canvas id="graphCanvas" width="800" height="600"></canvas>
+                
+                <!-- Information Panel -->
+                <div class="info-panel">
+                    <h4>📊 Algorithm Info</h4>
+                    <div id="queueInfo">Queue: []</div>
+                    <div id="visitedInfo">Visited: []</div>
+                    <div id="stepInfo">Step: 0</div>
+                    <div id="resultInfo"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
